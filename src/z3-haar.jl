@@ -78,7 +78,7 @@ function build_term(operators::Vector{<:SparseMatrixCSC})
     return term
 end
 
-function create_local_tau_operator(L::Int, site::Int)
+function create_local_q_operator(L::Int, site::Int) ## Charge form Sanjay's paper
     id, τ = get_z3_operators()
     ops = fill(id, L)
     ops[site] = (im / sqrt(3)) * (τ' - τ)
